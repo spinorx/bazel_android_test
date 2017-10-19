@@ -1,0 +1,4 @@
+build:android --cxxopt="-std=c++14"
+build:android --android_crosstool_top=@android_ndk//:toolchain-libcpp
+build:android --cpu=armeabi-v7a
+build:android --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
