@@ -1,7 +1,7 @@
 import android.support.annotation.Keep;
 
 @Keep
-public class VircorXClient {
+public class JniTest {
   static {
     System.loadLibrary("and_cpp");
   }

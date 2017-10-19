@@ -33,3 +33,16 @@ android_library(
     "@android_sdk//com.android.support:support-annotations-25.3.1",
   ],
 )
+
+android_binary(
+  name = "and_bin",
+  srcs = glob([
+    "java/**/*.java",
+  ]),
+  custom_package = "",
+  manifest = "AndroidManifest.xml",
+  deps = [
+    ":native_deps",
+    "@android_sdk//com.android.support:support-annotations-25.3.1",
+  ],
+)
