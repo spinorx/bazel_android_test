@@ -1,15 +1,28 @@
 package(default_visibility = ["//visibility:public"])
 
+config_setting(
+  name = "darwin",
+  values = {"cpu": "darwin"},
+)
+
 cc_binary(
   name = "liband_cpp.so",
   srcs = [
     "jni.cc",
   ],
+  copts = select({
+    "darwin": [
+      "-DDARWIN",
+    ],
+    "//conditions:default": [
+      "-DDEFAULT",
+    ],
+  }),
   linkopts = [
     "-llog",
   ],
   linkshared = True,
-  linkstatic = True,
+#  linkstatic = True,
 )
 
 cc_library(

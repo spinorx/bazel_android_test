@@ -1,5 +1,5 @@
 build:android --cxxopt="-std=c++14"
 #build:android --crosstool_top=//external:android/crosstool
 build:android --android_crosstool_top=@android_ndk//:toolchain-libcpp
-build:android --cpu=armeabi-v7a
-build:android --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:android --fat_apk_cpu=armeabi-v7a
+build:android --linkopt=-Lexternal/android_ndk/ndk/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a
